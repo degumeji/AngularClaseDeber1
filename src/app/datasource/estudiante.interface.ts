@@ -5,7 +5,7 @@ export interface Estudiante {
     identificacion: string;
     nombres: string;
     apellidos: string;
-    fecha_nacimiento: Date;
+    fecha_nacimiento: string;
     curso: string;
-    representantes: Representante[];
+    representantes?: any;
 }

@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modulos/home/home.component';
 import { NotfoundComponent } from './modulos/notfound/notfound.component';
+import { PersonaComponent } from './modulos/persona/persona.component';
+import { NotaComponent } from './modulos/nota/nota.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: '**', component: NotfoundComponent}
+  { path: 'persona', component: PersonaComponent },
+  { path: 'nota', component: NotaComponent },
+  { path: '**', component: NotfoundComponent }
 ]
 
 @NgModule({

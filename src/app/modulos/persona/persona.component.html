@@ -1,0 +1,49 @@
+
+<app-header
+  [titulo]="'VmtDevNg'"  
+  [numero]="numero"
+></app-header>
+
+<br />
+
+<div class="p-3">
+  <app-modal-persona
+    (eventoGuardar)="guardarPersona($event)"
+    [nombreBoton]="'Nuevo'"
+  ></app-modal-persona>
+</div>
+
+<br />
+
+<div class="table-responsive p-3">
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Identificacion</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Fecha_nacimiento</th>
+      <th>Curso</th>
+      <!--th>Representantes</th-->
+      <th>Opciones</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudiante of dataEstudiantes">
+        <td>{{ estudiante.id }}</td>
+        <td>{{ estudiante.identificacion }}</td>
+        <td>{{ estudiante.nombres }}</td>
+        <td>{{ estudiante.apellidos }}</td>
+        <td>{{ estudiante.fecha_nacimiento }}</td>
+        <td>{{ estudiante.curso }}</td>
+        <!--td>{{ persona.representantes }}</td-->
+        <td>
+          <app-modal-persona
+            [dataEstudiante]="estudiante"
+            [modalid]="'modalpersona' + estudiante.id"
+            [nombreBoton]="'Editar'"
+          ></app-modal-persona>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

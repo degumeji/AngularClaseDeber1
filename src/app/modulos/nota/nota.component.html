@@ -1,0 +1,45 @@
+<app-header [titulo]="'VmtDevNg'" [numero]="numero"></app-header>
+
+<br />
+
+<div class="p-3">
+  <app-modal-nota
+    (eventoGuardar)="guardarNota($event)"
+    [nombreBoton]="'Nuevo'"
+  ></app-modal-nota>
+</div>
+
+<br />
+
+<div class="table-responsive p-3">
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Estudiante</th>
+      <th>Nombre Tarea</th>
+      <th>Fecha Inicio</th>
+      <th>Fecha Fin</th>
+      <th>Calificacion</th>
+      <th>Estado</th>
+      <th>Opciones</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nota of dataCalificaciones">
+        <td>{{ nota.id }}</td>
+        <td>{{ nota.id_estudiante }}</td>
+        <td>{{ nota.nombre_tarea }}</td>
+        <td>{{ nota.fecha_inicio }}</td>
+        <td>{{ nota.fecha_fin }}</td>
+        <td>{{ nota.calificacion }}</td>
+        <td>{{ nota.Estado }}</td>
+        <td>
+          <app-modal-nota
+            [dataCalificacion]="nota"
+            [modalid]="'modalnota' + nota.id"
+            [nombreBoton]="'Editar'"
+          ></app-modal-nota>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
