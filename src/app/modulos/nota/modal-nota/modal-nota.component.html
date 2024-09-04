@@ -11,29 +11,29 @@
       <div class="modal-body">
         <form method="post">
           <div class="mb-3">
-            <label for="recipient-identificacion" class="col-form-label">Estudiante:</label>
-            <input name="recipient-identificacion" type="text" [(ngModel)]="dataCalificacion.id_estudiante" class="form-control" id="recipient-identificacion" required>
+            <label for="recipient-id_estudiante" class="col-form-label">Estudiante:</label>            
+            <select [(ngModel)]="dataCalificacion.id_estudiante" class="form-control" id="recipient-id_estudiante" name="recipient-id_estudiante">
+              <option *ngFor="let estudiante of dataEstudiantes" [ngValue]="estudiante.id">
+                {{estudiante.nombres + ' ' + estudiante.apellidos}}
+              </option>
+            </select>
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Nombre Tarea:</label>
-            <input type="text" name="recipient-name" [(ngModel)]="dataCalificacion.nombre_tarea" class="form-control" id="recipient-name" required>
+            <label for="recipient-nombre_tarea" class="col-form-label">Nombre Tarea:</label>
+            <input type="text" name="recipient-nombre_tarea" [(ngModel)]="dataCalificacion.nombre_tarea" class="form-control" id="recipient-nombre_tarea" required>
           </div>
           <div class="mb-3">
-            <label for="recipient-lastname" class="col-form-label">Fecha Inicio:</label>
-            <input name="recipient-lastname" type="text" [(ngModel)]="dataCalificacion.fecha_inicio"  class="form-control" id="recipient-lastname" required>
+            <label for="recipient-fecha_inicio" class="col-form-label">Fecha Inicio:</label>
+            <input name="recipient-fecha_inicio" type="text" [(ngModel)]="dataCalificacion.fecha_inicio"  class="form-control" id="recipient-fecha_inicio" required>
           </div>          
           <div class="mb-3">
-            <label for="recipient-edad" class="col-form-label">Fecha Fin:</label>
-            <input name="recipient-edad" type="text" [(ngModel)]="dataCalificacion.fecha_fin" class="form-control" id="recipient-edad" required>
+            <label for="recipient-fecha_fin" class="col-form-label">Fecha Fin:</label>
+            <input name="recipient-fecha_fin" type="text" [(ngModel)]="dataCalificacion.fecha_fin" class="form-control" id="recipient-fecha_fin" required>
           </div>
           <div class="mb-3">
-            <label for="recipient-phone" class="col-form-label">Calificacion:</label>
-            <input name="recipient-phone" type="text" [(ngModel)]="dataCalificacion.calificacion" class="form-control" id="recipient-phone" required>
+            <label for="recipient-calificacion" class="col-form-label">Calificacion:</label>
+            <input name="recipient-calificacion" type="text" [(ngModel)]="dataCalificacion.calificacion" class="form-control" id="recipient-calificacion" required>
           </div>
-          <div class="mb-3">
-            <label for="recipient-email" class="col-form-label">Estado:</label>
-            <input name="recipient-email" type="text" [(ngModel)]="dataCalificacion.Estado" class="form-control" id="recipient-email" required>
-          </div>          
           <div class="modal-footer">
             <input type="button" id="btnCerrarModal" class="btn btn-secondary" value="Cerrar" data-bs-dismiss="modal">
             <input type="button" id="btnGuardar" class="btn btn-primary" value="Guardar" (click)="guardar()">

@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Estudiante } from '../../../datasource/estudiante.interface';
-import { Representante } from '../../../datasource/representante.interface';
 
 @Component({
   selector: 'app-modal-persona',
@@ -22,25 +21,15 @@ export class ModalPersonaComponent {
     apellidos: '',
     fecha_nacimiento: '',
     curso: '',
-    representantes: null
+    representante: null
   };
 
   @Output() eventoGuardar = new EventEmitter<Estudiante>();
 
   guardar() {
-    //if (!this.validarGuardar()) {
-      this.eventoGuardar.emit(this.dataEstudiante);
-      this.cerrarModal();
-    //}
+    this.eventoGuardar.emit(this.dataEstudiante);
+    this.cerrarModal();
   }
-  /*
-    validarGuardar(): boolean {
-      if (this.validarEstaVacio(this.dataEstudiante.celular)) {
-        this.mostrarMensajeError("El valor de celular no se ha agregado");
-        return true;
-      }
-      return false;
-    }*/
 
   cerrarModal() {
     let btnCerrar = document.getElementById('btnCerrarModal');

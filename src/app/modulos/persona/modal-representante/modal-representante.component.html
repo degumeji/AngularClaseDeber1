@@ -1,0 +1,45 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalid">{{nombreBoton}}</button>
+
+<div class="modal fade" id="{{modalid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Representante</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="divMensaje"></div>
+      <div class="modal-body">
+        <form method="post">
+          <div class="mb-3">
+            <label for="recipient-nombres" class="col-form-label">Nombres:</label>
+            <input name="recipient-nombres" type="text" [(ngModel)]="dataRepresentante.nombres" class="form-control" id="recipient-nombres" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-lastname" class="col-form-label">Apellidos:</label>
+            <input type="text" name="recipient-lastname" [(ngModel)]="dataRepresentante.apellidos" class="form-control" id="recipient-lastname" required>
+          </div>              
+          <div class="mb-3">
+            <label for="recipient-relacion" class="col-form-label">Relacion:</label>            
+            <select [(ngModel)]="dataRepresentante.relacion" class="form-control" id="recipient-relacion" name="recipient-relacion">
+              <option value="padre">Padre</option>
+              <option value="madre">Madre</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-telefono" class="col-form-label">Telefono:</label>
+            <input name="recipient-telefono" type="text" [(ngModel)]="dataRepresentante.telefono" class="form-control" id="recipient-telefono" required>
+          </div>  
+          <div class="mb-3">
+            <label for="recipient-email" class="col-form-label">Email:</label>
+            <input name="recipient-email" type="text" [(ngModel)]="dataRepresentante.email" class="form-control" id="recipient-email" required>
+          </div>                    
+          <div class="modal-footer">
+            <input type="button" id="btnCerrarModal" class="btn btn-secondary" value="Cerrar" data-bs-dismiss="modal">
+            <input type="button" id="btnGuardar" class="btn btn-primary" value="Guardar" (click)="guardar()">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,5 +4,5 @@ export interface Representante {
     apellidos: string;
     relacion: string;
     telefono: string;
-    email?: string;
+    email?: any;
 }

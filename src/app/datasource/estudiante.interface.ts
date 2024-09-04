@@ -7,5 +7,5 @@ export interface Estudiante {
     apellidos: string;
     fecha_nacimiento: string;
     curso: string;
-    representantes?: any;
+    representante: any;
 }

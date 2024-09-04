@@ -7,31 +7,39 @@
     (eventoGuardar)="guardarNota($event)"
     [nombreBoton]="'Nuevo'"
   ></app-modal-nota>
+  <input type="button" class="btn btn-secondary ms-1" (click)="imprimir()" value="Imprimir">
 </div>
 
 <br />
 
+<style>
+ /* td {
+    text-align: center;
+    vertical-align: middle;
+  }*/
+</style>
+
 <div class="table-responsive p-3">
   <table class="table">
     <thead>
-      <th>Id</th>
-      <th>Estudiante</th>
-      <th>Nombre Tarea</th>
-      <th>Fecha Inicio</th>
-      <th>Fecha Fin</th>
-      <th>Calificacion</th>
-      <th>Estado</th>
-      <th>Opciones</th>
+      <th class="text-center">Id</th>
+      <th class="text-center">Estudiante</th>
+      <th class="text-center">Nombre Tarea</th>
+      <th class="text-center">Fecha Inicio</th>
+      <th class="text-center">Fecha Fin</th>
+      <th class="text-center">Calificacion</th>
+      <th class="text-center">Estado</th>
+      <th class="text-center">Opciones</th>
     </thead>
     <tbody>
       <tr *ngFor="let nota of dataCalificaciones">
         <td>{{ nota.id }}</td>
-        <td>{{ nota.id_estudiante }}</td>
+        <td>{{ nota.nombre_estudiante }}</td>
         <td>{{ nota.nombre_tarea }}</td>
         <td>{{ nota.fecha_inicio }}</td>
         <td>{{ nota.fecha_fin }}</td>
         <td>{{ nota.calificacion }}</td>
-        <td>{{ nota.Estado }}</td>
+        <td>{{ nota.calificacion | notapipe }}</td>
         <td>
           <app-modal-nota
             [dataCalificacion]="nota"

@@ -1,41 +1,35 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Nota } from '../../../datasource/nota.interface';
-import { lestudiantes } from '../../../datasource/data';
+import { Estudiante } from '../../../datasource/estudiante.interface';
+import { Representante } from '../../../datasource/representante.interface';
 
 @Component({
-  selector: 'app-modal-nota',
-  templateUrl: './modal-nota.component.html',
+  selector: 'app-modal-representante',
+  templateUrl: './modal-representante.component.html',
   styles: ``
 })
-export class ModalNotaComponent {
-
-  dataEstudiantes: any[] = lestudiantes;
-
+export class ModalRepresentanteComponent {
   @Input()
-  modalid: string = 'modalNota';
+  modalid: string = 'modalRepresentante';
 
   @Input()
   nombreBoton: string = 'Nuevo';
 
   @Input()
-  dataCalificacion: Nota = {
-    "id": 0,
-    "id_estudiante": 0,
-    "nombre_estudiante": '',
-    "nombre_tarea": '',
-    "fecha_inicio": '',
-    "fecha_fin": '',
-    "calificacion": 0
+  dataRepresentante: Representante = {
+    id: 0,
+    nombres: "",
+    apellidos: "",
+    relacion: "",
+    telefono: "",
+    email: null
   };
 
-  @Output() eventoGuardar = new EventEmitter<Nota>();
+  @Output() eventoGuardar = new EventEmitter<Representante>();
 
-  guardar() {    
-    this.dataCalificacion.nombre_estudiante = lestudiantes.find(p => p.id === this.dataCalificacion.id_estudiante)?.nombres
-      + " " + lestudiantes.find(p => p.id === this.dataCalificacion.id_estudiante)?.apellidos;
-    this.eventoGuardar.emit(this.dataCalificacion);
+  guardar() {
+    this.eventoGuardar.emit(this.dataRepresentante);
     this.cerrarModal();
-  }  
+  }
 
   cerrarModal() {
     let btnCerrar = document.getElementById('btnCerrarModal');

@@ -6,16 +6,16 @@ export const lestudiantes = [
         "apellidos": "Gomez Perez",
         "fecha_nacimiento": "1985-02-14",
         "curso": "Matematicas",
-        "representantes": [
-            {
-                "id": 1,
-                "nombres": "Luis",
-                "apellidos": "Gomez",
-                "relacion": "Padre",
-                "telefono": "9999999999",
-                "email": null,
-            },
-        ]
+        "representante":
+        {
+            "id": 1,
+            "nombres": "Luis",
+            "apellidos": "Gomez",
+            "relacion": "padre",
+            "telefono": "9999999999",
+            "email": "jauana@mail.com",
+        },
+
     },
     {
         "id": 2,
@@ -24,16 +24,16 @@ export const lestudiantes = [
         "apellidos": "Lopez Sanchez",
         "fecha_nacimiento": "1990-06-22",
         "curso": "Matematicas",
-        "representantes": [
-            {
-                "id": 1,
-                "nombres": "Juana",
-                "apellidos": "Sanchez",
-                "relacion": "Madre",
-                "telefono": "9999999999",
-                "email": "jauana@mail.com",
-            },
-        ]
+        "representante":
+        {
+            "id": 1,
+            "nombres": "Juana",
+            "apellidos": "Pedromo",
+            "relacion": "madre",
+            "telefono": "9999999999",
+            "email": "jauana@mail.com",
+        },
+
     },
     {
         "id": 3,
@@ -42,7 +42,16 @@ export const lestudiantes = [
         "apellidos": "Fernandez Torres",
         "fecha_nacimiento": "1978-11-03",
         "curso": "Literatura",
-        "representantes": null
+        "representante":
+        {
+            "id": 1,
+            "nombres": "Juana",
+            "apellidos": "Sanchez",
+            "relacion": "madre",
+            "telefono": "9999999999",
+            "email": "jauana@mail.com",
+        },
+
     },
 ];
 
@@ -82,7 +91,6 @@ export const lcalificaciones = [
         "nombre_tarea": "Realizar suma de las tablas",
         "fecha_inicio": "2024-09-01",
         "fecha_fin": "2024-09-04",
-        "calificacion": 7,
-        "Estado": "Aprobado"
+        "calificacion": 7
     }
 ];

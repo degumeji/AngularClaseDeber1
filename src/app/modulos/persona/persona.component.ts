@@ -11,33 +11,20 @@ import { Router } from '@angular/router';
 export class PersonaComponent {
 
   constructor(router: Router) {
-    const navigation = router.getCurrentNavigation();
-    //this.email = navigation?.extras.state?.['emailusuario'];
+    const navigation = router.getCurrentNavigation();    
     this.numero = navigation?.extras.state?.['numero'];
   }
-
-  @Input() email: string = '';
+  
   @Input() numero: number = 0;
 
   dataEstudiantes: Estudiante[] = lestudiantes;
-
-  funcionExample() {
-    this.dataEstudiantes.toString();
-  }
-
-  funcionPersona(Estudiante: Estudiante) {
-    console.log(Estudiante);
-  }
-
-  funcionEliminar(persona: any) {
-    alert('Hola');
-  }
 
   guardarPersona(estudiante: Estudiante) {
     if (estudiante.id == 0) {
       estudiante.id = lestudiantes.length + 1;
     }
     lestudiantes.push(estudiante);
+    console.log(JSON.stringify(lestudiantes));
   }
 
   mostrarMensajeError(message: string) {

@@ -1,27 +1,56 @@
-# AngularClaseDeber1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+# Deber N1 - TAREA DE ESTUDIANTES
 
-## Development server
+## Requerimientos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Realizar un módulo con componentes interactivos para el ingreso de estudiantes, representantes y calificaciones:
+```
+Para los datos del estudiante considerar los siguientes datos:
 
-## Code scaffolding
+* Identificación
+* Nombres
+* Apellidos
+* Fecha de nacimiento
+* Curso
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para el ingreso de representantes considerar los siguientes datos:
+* Nombres y apellidos
+* Relación (Padre, madre, tío, etc...)
+* Teléfono
+* Email (Opcional)
 
-## Build
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+LAS CALIFICACIONES SE MOSTRARÁN EN UNA TABLA Y SE DEBEN INGRESAR CON UN MODAL HACIA LA TABLA.
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para el ingreso de calificaciones considerar los siguientes datos:
 
-## Running end-to-end tests
+* Nombre de tarea
+* Descripción de tarea
+* Fecha de inicio
+* Fecha fin
+* Calificación
+* Estado (Si es 7 o mayor a 7 “Aprobado” ; Meno a 7 “Reprobado”) Se calcula en base a los datos ingresados en el modal
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Todos los datos deben mostrarse en un JSON en consola con el resultado obtenido.
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## SUBIR LA TAREA CON EL CORRESPONDIENTE README.
+
+## INTEGRANTE: 
+* Derek Mejía
+
+## CAPTURAS
+
+![home](src/assets/img/1.png "home")
+
+![persona](src/assets/img/2.png "persona")
+
+![notas](src/assets/img/3.png "notas")
+
+![representantes](src/assets/img/4.png "representantes")
+
+## FIN

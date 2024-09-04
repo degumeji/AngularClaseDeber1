@@ -15,17 +15,24 @@
 
 <br />
 
+<style>
+  /*td {
+    text-align: center;
+    vertical-align: middle;
+  }*/
+</style>
+
 <div class="table-responsive p-3">
   <table class="table">
     <thead>
-      <th>Id</th>
-      <th>Identificacion</th>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Fecha_nacimiento</th>
-      <th>Curso</th>
-      <!--th>Representantes</th-->
-      <th>Opciones</th>
+      <th class="text-center">Id</th>
+      <th class="text-center">Identificacion</th>
+      <th class="text-center">Nombres</th>
+      <th class="text-center">Apellidos</th>
+      <th class="text-center">Fecha_nacimiento</th>
+      <th class="text-center">Curso</th>
+      <th class="text-center">Representante</th>
+      <th class="text-center">Opciones</th>
     </thead>
     <tbody>
       <tr *ngFor="let estudiante of dataEstudiantes">
@@ -35,7 +42,13 @@
         <td>{{ estudiante.apellidos }}</td>
         <td>{{ estudiante.fecha_nacimiento }}</td>
         <td>{{ estudiante.curso }}</td>
-        <!--td>{{ persona.representantes }}</td-->
+        <td>
+          <app-modal-representante
+            [dataRepresentante]="estudiante.representante"
+            [modalid]="'modalrepresentante' + estudiante.id"
+            [nombreBoton]="'Representante'"            
+          ></app-modal-representante>
+        </td>
         <td>
           <app-modal-persona
             [dataEstudiante]="estudiante"

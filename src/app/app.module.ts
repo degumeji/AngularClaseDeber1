@@ -9,8 +9,10 @@ import { HomeComponent } from './modulos/home/home.component';
 import { NotfoundComponent } from './modulos/notfound/notfound.component';
 import { NotaComponent } from './modulos/nota/nota.component';
 import { PersonaComponent } from './modulos/persona/persona.component';
-import {ModalPersonaComponent} from './modulos/persona/modal-persona/modal-persona.component';
-import {ModalNotaComponent} from './modulos/nota/modal-nota/modal-nota.component';
+import { ModalPersonaComponent } from './modulos/persona/modal-persona/modal-persona.component';
+import { ModalNotaComponent } from './modulos/nota/modal-nota/modal-nota.component';
+import { NotaPipe } from './shared/pipes/nota.pipe';
+import { ModalRepresentanteComponent } from './modulos/persona/modal-representante/modal-representante.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {ModalNotaComponent} from './modulos/nota/modal-nota/modal-nota.component
     NotaComponent,
     PersonaComponent,
     ModalPersonaComponent,
-    ModalNotaComponent
+    ModalNotaComponent,
+    NotaPipe,
+    ModalRepresentanteComponent
   ],
   imports: [
     BrowserModule,
